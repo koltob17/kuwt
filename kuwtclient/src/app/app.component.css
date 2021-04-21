@@ -1,3 +1,8 @@
 .example-spacer {
   flex: 1 1 auto;
 }
+
+button:focus, button:active:focus, button.active:focus {
+  outline: none !important;
+  outline-style: none !important;
+}
