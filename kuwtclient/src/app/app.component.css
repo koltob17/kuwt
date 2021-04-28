@@ -6,3 +6,17 @@ button:focus, button:active:focus, button.active:focus {
   outline: none !important;
   outline-style: none !important;
 }
+
+.images{
+  height: 50px;
+}
+
+.tool-button{
+  margin-left: 10px;
+}
+
+.news-list{
+  width: 80%;
+  margin-top: 50px;
+  margin-left: 10%;
+}

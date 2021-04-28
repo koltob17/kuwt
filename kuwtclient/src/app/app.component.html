@@ -1,28 +1,45 @@
+<!DOCTYPE html>
+<head>
 
-<mat-toolbar color="primary">
-  <button mat-icon-button [matMenuTriggerFor]="menu" class="example-icon" aria-label="Example icon-button with menu icon">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item>
-      <mat-icon>dialpad</mat-icon>
-      <span>Redial</span>
+</head>
+<body>
+  <mat-toolbar color="primary">
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
     </button>
-    <button mat-menu-item disabled>
-      <mat-icon>voicemail</mat-icon>
-      <span>Check voice mail</span>
-    </button>
-    <button mat-menu-item>
-      <mat-icon>notifications_off</mat-icon>
-      <span>Disable alerts</span>
-    </button>
-  </mat-menu>
-  <span>{{title}}</span>
-  <span class="example-spacer"></span>
-  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-    <mat-icon>favorite</mat-icon>
-  </button>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-    <mat-icon>share</mat-icon>
-  </button>
-</mat-toolbar>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <span>Menu1</span>
+      </button>
+      <button mat-menu-item>
+        <span>Menu2</span>
+      </button>
+      <button mat-menu-item>
+        <span>Menu3</span>
+      </button>
+    </mat-menu>
+    <span>{{title}}</span>
+    <img  class="images" src="assets/img/kuwt_logo.png"/>
+    <span class="example-spacer"></span>
+    <button mat-raised-button class="tool-button">Streamers</button>
+    <button mat-raised-button class="tool-button">Games</button>
+  </mat-toolbar>
+
+  <mat-grid-list cols="4" rowHeight="100px" class="news-list">
+    <mat-grid-tile
+      *ngFor="let tile of tiles"
+      [colspan]="tile.cols"
+      [rowspan]="tile.rows"
+      [style.background]="tile.color">
+      {{tile.text}}
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <mat-tab-group class="news-list">
+    <mat-tab label="First"> Content 1 </mat-tab>
+    <mat-tab label="Second"> Content 2 </mat-tab>
+    <mat-tab label="Third"> Content 3 </mat-tab>
+  </mat-tab-group>
+</body>
+
+
