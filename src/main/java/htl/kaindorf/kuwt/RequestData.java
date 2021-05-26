@@ -34,7 +34,7 @@ public class RequestData {
             in.close();
             con.disconnect();
 
-            return content.toString();
+            return content.toString().replace("{width}","138").replace("{height}","190");
 
         } catch (Exception e) {
             System.out.println(e);

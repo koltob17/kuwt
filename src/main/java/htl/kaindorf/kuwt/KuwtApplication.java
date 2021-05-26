@@ -45,6 +45,7 @@ public class KuwtApplication {
         return redirectView;
     }
 
+    @CrossOrigin(origins = "http://localhost:4200/")
     @GetMapping("/topGames")
     public String getTopGames()
     {
@@ -53,6 +54,7 @@ public class KuwtApplication {
         return topGames;
     }
 
+    @CrossOrigin(origins = "http://localhost:4200/")
     @GetMapping("/searchChannels")
     public String searchChannels(@RequestParam(name = "query") String query)
     {
@@ -61,6 +63,7 @@ public class KuwtApplication {
         return searchChannel;
     }
 
+    @CrossOrigin(origins = "http://localhost:4200/")
     @GetMapping("/getActiveStreams")
     public String getActiveStreams()
     {

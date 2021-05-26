@@ -20,6 +20,8 @@ public class Authentication {
     private static final String redirect_uri = "http://localhost:8080/hello";
     private static final String scopes = "analytics:read:games user:read:email";
 
+
+    /* Liefert die Uri für das einloggen zurück. Um den Code zu erhalten*/
     public static String getUri()
     {
         String token = "";
@@ -29,11 +31,13 @@ public class Authentication {
 
             return url.toString();
         } catch (Exception e) {
+            System.out.println(e);
             return e.toString();
         }
 
     }
 
+    /* Nachdem man den Code erhalten hat kann man durch diese Funktion den Token bekommen.*/
     public static String getToken(String code)
     {
         try {
@@ -72,9 +76,8 @@ public class Authentication {
             return token;
 
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e);
+            return e.toString();
         }
-
-        return "fehler";
     }
 }
