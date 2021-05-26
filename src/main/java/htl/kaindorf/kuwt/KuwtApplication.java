@@ -18,7 +18,7 @@ public class KuwtApplication {
     }
 
     @RequestMapping("/hello")
-    public @ResponseBody String getToken(@RequestParam(required = false) Map<String, String> para) {
+    public @ResponseBody RedirectView getToken(@RequestParam(required = false) Map<String, String> para) {
 
 
         para.forEach((a,b) -> {
@@ -29,7 +29,11 @@ public class KuwtApplication {
 
         this.token = Authentication.getToken(para.get("code"));
 
-        return "";
+
+        String uri = "http://localhost:4200/welcome";
+        RedirectView redirectView = new RedirectView();
+        redirectView.setUrl(uri);
+        return redirectView;
     }
 
     @RequestMapping("/")
@@ -64,4 +68,5 @@ public class KuwtApplication {
 
         return streams;
     }
+
 }
