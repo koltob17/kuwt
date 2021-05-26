@@ -37,7 +37,7 @@ public class Authentication {
     public static String getToken(String code)
     {
         try {
-            String url = "https://id.twitch.tv/oauth2/token?client_id=cybiryufno8r3vb22ll4fy5hk5kmf7&client_secret=vbwn7x6lpi33g9cywmfh4zb6kzk3u0&grant_type=authorization_code&redirect_uri=http://localhost:8080/hello&code="+code;
+            String url = "https://id.twitch.tv/oauth2/token?client_id="+client_id+"&client_secret="+client_secret+"&grant_type=authorization_code&redirect_uri="+redirect_uri+"&code="+code;
 
             var values = new HashMap<String, String>() {{
                 put("client_id", client_id);

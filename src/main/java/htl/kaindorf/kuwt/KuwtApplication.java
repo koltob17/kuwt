@@ -48,4 +48,20 @@ public class KuwtApplication {
 
         return topGames;
     }
+
+    @GetMapping("/searchChannels")
+    public String searchChannels(@RequestParam(name = "query") String query)
+    {
+        String searchChannel = RequestData.searchChannels(token,query);
+
+        return searchChannel;
+    }
+
+    @GetMapping("/getActiveStreams")
+    public String getActiveStreams()
+    {
+        String streams = RequestData.getActiveStreams(token);
+
+        return streams;
+    }
 }

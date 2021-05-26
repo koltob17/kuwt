@@ -15,7 +15,7 @@ public class RequestData {
     {
         URL url = null;
         try {
-            url = new URL("https://api.twitch.tv/helix/games/top");
+            url = new URL("https://api.twitch.tv/helix/games/top?first=10");
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("GET");
 
@@ -37,8 +37,74 @@ public class RequestData {
             return content.toString();
 
         } catch (Exception e) {
+            System.out.println(e);
             return e.toString();
         }
 
+    }
+
+    public static String searchChannels(String token, String query)
+    {
+        URL url = null;
+
+        try {
+            url = new URL("https://api.twitch.tv/helix/search/channels?query="+query);
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            con.setRequestMethod("GET");
+
+            con.setRequestProperty("client-id",client_id);
+            con.setRequestProperty("Authorization","Bearer "+token);
+
+            System.out.println(con.getResponseCode());
+
+            BufferedReader in = new BufferedReader(
+                    new InputStreamReader(con.getInputStream()));
+            String inputLine;
+            StringBuffer content = new StringBuffer();
+            while ((inputLine = in.readLine()) != null) {
+                content.append(inputLine);
+            }
+            in.close();
+            con.disconnect();
+
+            return content.toString();
+
+        } catch (Exception e) {
+            System.out.println(e);
+            return e.toString();
+        }
+
+    }
+
+    public static String getActiveStreams(String token)
+    {
+        URL url = null;
+
+        try {
+            url = new URL("https://api.twitch.tv/helix/streams");
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            con.setRequestMethod("GET");
+
+            con.setRequestProperty("client-id",client_id);
+            con.setRequestProperty("Authorization","Bearer "+token);
+
+            System.out.println(con.getResponseCode());
+
+            BufferedReader in = new BufferedReader(
+                    new InputStreamReader(con.getInputStream()));
+            String inputLine;
+            StringBuffer content = new StringBuffer();
+            while ((inputLine = in.readLine()) != null) {
+                content.append(inputLine);
+            }
+            in.close();
+            con.disconnect();
+
+            return content.toString();
+
+        } catch (Exception e) {
+            System.out.println(e);
+            return e.toString();
+        }
     }
 }
