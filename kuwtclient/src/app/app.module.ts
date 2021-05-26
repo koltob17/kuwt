@@ -15,13 +15,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { GamesComponent } from './games/games.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { StreamersComponent } from './streamers/streamers.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { LoginComponent } from './login/login.component';
+import {MatCardModule} from '@angular/material/card';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     GamesComponent,
     WelcomeComponent,
-    StreamersComponent
+    StreamersComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +38,11 @@ import { StreamersComponent } from './streamers/streamers.component';
     MatMenuModule,
     MatGridListModule,
     MatTabsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatCardModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

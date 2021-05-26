@@ -19,17 +19,22 @@
     </button>
   </mat-menu>
   <span>{{title}}</span>
-  <img  class="images" src="./assets/img/kuwt_logo.png" routerLink="/welcome"/>
+  <img  class="images" src="./assets/img/kuwt_logo.png"/>
   <span class="example-spacer"></span>
   <nav>
-    <button mat-raised-button class="tool-button" routerLink="/streamers">Streamers</button>
+    <button mat-raised-button class="tool-button" routerLink="/streamers" [disabled]="true">Streamers</button>
 
-    <button mat-raised-button class="tool-button" routerLink="/games">Games</button>
+    <button mat-raised-button class="tool-button" routerLink="/games" [disabled]="true">Games</button>
   </nav>
 </mat-toolbar>
 
+<mat-card class="login-card">
+  <mat-card-header>Login to continue!</mat-card-header>
+  <mat-card-content>
+    <button mat-raised-button class="tool-button" (click)="loginClicked()">Login</button>
+  </mat-card-content>
+</mat-card>
+
 </body>
-
-
 
 

@@ -12,7 +12,7 @@ export interface Tile {
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent {
-  title = 'KeeppingUpWithTwitch';
+  title = 'KeepingUpWithTwitch';
   tiles: Tile[] = [
     {text: 'Interesting statistic one', cols: 3, rows: 2, color: 'lightblue'},
     {text: 'Chart two', cols: 1, rows: 4, color: 'lightgreen'},

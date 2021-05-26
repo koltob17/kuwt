@@ -1,13 +1,5 @@
-.images{
-  height: 50px;
-}
-
 .example-spacer {
   flex: 1 1 auto;
-}
-
-.tool-button{
-  margin-left: 10px;
 }
 
 button:focus, button:active:focus, button.active:focus {
@@ -15,18 +7,23 @@ button:focus, button:active:focus, button.active:focus {
   outline-style: none !important;
 }
 
-table {
-  width: 100%;
+.images{
+  height: 50px;
 }
 
-.table-center {
-  margin-top: 20px;
-  margin-left: 10%;
+.tool-button{
+  margin-left: 10px;
+}
+
+.news-list{
   width: 80%;
-  text-align: center;
+  margin-top: 50px;
+  margin-left: 10%;
 }
 
-.table-heading {
+.login-card {
   text-align: center;
-  margin-top: 20px;
+  width: 40%;
+  margin-top: 50px;
+  margin-left: 30%;
 }

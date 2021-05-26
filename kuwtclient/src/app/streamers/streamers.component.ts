@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StreamersComponent implements OnInit {
 
+  title="KeepingUpWithTwitch"
+
   constructor() { }
 
   ngOnInit(): void {
