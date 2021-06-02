@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { StreamerserviceService } from "../services/streamerservice.service";
+import {Search} from "../beans/search";
 
 @Component({
   selector: 'app-streamers',
@@ -8,10 +10,21 @@ import { Component, OnInit } from '@angular/core';
 export class StreamersComponent implements OnInit {
 
   title="KeepingUpWithTwitch"
+  dataSource = null;
+  search: String = ''
 
-  constructor() { }
+  results: Search[]
+
+  constructor(private streamerService: StreamerserviceService) { }
 
   ngOnInit(): void {
+
   }
 
+  onStreamerInput(): void {
+    this.streamerService.findPerson(this.search).subscribe(data =>{
+      this.results = data;
+      console.log(this.results);
+      this.dataSource = this.results;})
+  }
 }

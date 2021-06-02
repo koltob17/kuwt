@@ -20,3 +20,27 @@ button:focus, button:active:focus, button.active:focus {
   margin-top: 50px;
   margin-left: 10%;
 }
+
+.streamer-in {
+  width: 20%;
+  margin-top: 20px;
+  margin-left: 40%;
+  display: block;
+}
+
+.example-card {
+  width: 23%;
+  display: inline-block;
+  margin: 10px;
+}
+
+.example-header-image {
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+}
+
+.cards {
+  width: 15%;
+  display: inline;
+}
