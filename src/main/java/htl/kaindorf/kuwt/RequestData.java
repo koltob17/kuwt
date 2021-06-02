@@ -80,7 +80,7 @@ public class RequestData {
             in.close();
             con.disconnect();
 
-            return content.toString().replace("300","25").replace("300","25");
+            return content.toString();
 
         } catch (Exception e) {
             System.out.println(e);
