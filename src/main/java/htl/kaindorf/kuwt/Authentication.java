@@ -21,11 +21,12 @@ public class Authentication {
     private static final String scopes = "analytics:read:games user:read:email";
 
 
-    /* Liefert die Uri für das einloggen zurück. Um den Code zu erhalten*/
+    /**
+     * Liefert die Uri für das einloggen zurück. Um den Code zu erhalten.
+     * @return String
+     */
     public static String getUri()
     {
-        String token = "";
-
         try {
             URL url = new URL("https://id.twitch.tv/oauth2/authorize?client_id="+client_id+"&redirect_uri="+redirect_uri+"&scope="+scopes+"&response_type=code");
 
@@ -37,7 +38,11 @@ public class Authentication {
 
     }
 
-    /* Nachdem man den Code erhalten hat kann man durch diese Funktion den Token bekommen.*/
+    /**
+     * Nachdem man den Code erhalten hat kann man durch diese Funktion den Token bekommen.
+     * @param code
+     * @return String
+     */
     public static String getToken(String code)
     {
         try {

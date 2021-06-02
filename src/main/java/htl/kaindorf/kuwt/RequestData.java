@@ -11,6 +11,12 @@ public class RequestData {
 
     private static final String client_id = "cybiryufno8r3vb22ll4fy5hk5kmf7";
 
+
+    /**
+     * Liefert dir durch den Token die zurzeit 10 meist geschauten Spiele
+     * @param token
+     * @return String
+     */
     public static String getTopGames(String token)
     {
         URL url = null;
@@ -43,6 +49,13 @@ public class RequestData {
 
     }
 
+    /**
+     * Durch den Token und einem String können alle Streamer gefunden werden die mindestens 1 mal in den
+     * letzten 6 Monaten gestreamt haben.
+     * @param token
+     * @param query
+     * @return String
+     */
     public static String searchChannels(String token, String query)
     {
         URL url = null;
@@ -67,7 +80,7 @@ public class RequestData {
             in.close();
             con.disconnect();
 
-            return content.toString();
+            return content.toString().replace("300","25").replace("300","25");
 
         } catch (Exception e) {
             System.out.println(e);
@@ -76,6 +89,11 @@ public class RequestData {
 
     }
 
+    /**
+     * Liefert die Top aktiven Streams zurück.
+     * @param token
+     * @return String
+     */
     public static String getActiveStreams(String token)
     {
         URL url = null;
