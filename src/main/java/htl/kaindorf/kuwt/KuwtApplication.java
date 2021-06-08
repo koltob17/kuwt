@@ -47,7 +47,7 @@ public class KuwtApplication {
      * auf die Twitch Authentifizierung weitergeleitet zu werden.
      * @return RedirectView
      */
-    @RequestMapping("/")
+    @RequestMapping("/auth")
     public RedirectView redirectWithRedirectView(){
 
         String uri = Authentication.getUri();
