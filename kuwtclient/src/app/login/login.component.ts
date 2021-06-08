@@ -19,6 +19,6 @@ export class LoginComponent implements OnInit {
   }
 
   loginClicked(): void {
-    window.location.href = 'http://localhost:8080/';
+    window.location.href = 'http://localhost:8080/auth';
   }
 }
