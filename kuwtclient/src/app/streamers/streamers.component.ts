@@ -27,4 +27,8 @@ export class StreamersComponent implements OnInit {
       console.log(this.results);
       this.dataSource = this.results;})
   }
+
+  streamerClicked(reference: String): void{
+    window.location.href = 'https://www.twitch.tv/' + reference;
+  }
 }

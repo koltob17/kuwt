@@ -1,5 +1,5 @@
 .images{
-  height: 50px;
+  height: 40px;
 }
 
 .example-spacer {
@@ -29,4 +29,21 @@ table {
 .table-heading {
   text-align: center;
   margin-top: 20px;
+}
+
+.example-card {
+  width: 18%;
+  display: inline-block;
+  margin: 10px;
+}
+
+.example-header-image {
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+}
+
+.cards {
+  width: 10%;
+  display: inline;
 }

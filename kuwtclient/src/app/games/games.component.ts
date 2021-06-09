@@ -26,5 +26,9 @@ export class GamesComponent implements OnInit  {
     })
 
   }
+
+  gameClicked(reference: String): void{
+    window.location.href = 'https://www.twitch.tv/directory/game/' + reference.replace(' ','%20');
+  }
 }
 

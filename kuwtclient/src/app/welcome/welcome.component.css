@@ -8,7 +8,7 @@ button:focus, button:active:focus, button.active:focus {
 }
 
 .images{
-  height: 50px;
+  height: 40px;
 }
 
 .tool-button{
@@ -19,4 +19,30 @@ button:focus, button:active:focus, button.active:focus {
   width: 80%;
   margin-top: 50px;
   margin-left: 10%;
+}
+
+.tile{
+  display: block;
+}
+
+.topstreams{
+  width: 20%;
+  margin-top: 30px;
+  margin-left: 70%;
+  display: inline-block;
+  background-color: lightyellow;
+  padding: 10px;
+}
+
+.tile-img{
+  display: inline-block;
+  margin-top: 10px;
+  border: 2px solid black ;
+}
+
+.profile{
+  width: 30px;
+  height: 30px;
+  margin-top: 15px;
+  border-radius: 20px;
 }

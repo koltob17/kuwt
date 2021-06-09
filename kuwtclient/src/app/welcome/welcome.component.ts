@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import { TopstreamService } from "../services/topstream.service";
+import {Topstream} from "../beans/topstream";
+import { UserService} from "../services/user.service";
+import {User} from "../beans/user";
 
 export interface Tile {
   color: string;
@@ -11,12 +15,42 @@ export interface Tile {
   templateUrl: './welcome.component.html',
   styleUrls: ['./welcome.component.css']
 })
-export class WelcomeComponent {
+export class WelcomeComponent implements OnInit{
   title = 'KeepingUpWithTwitch';
-  tiles: Tile[] = [
-    {text: 'Interesting statistic one', cols: 3, rows: 2, color: 'lightblue'},
-    {text: 'Chart two', cols: 1, rows: 4, color: 'lightgreen'},
-    {text: 'Sample news about site', cols: 1, rows: 2, color: 'lightpink'},
-    {text: 'Twitch related news', cols: 2, rows: 2, color: '#DDBDF1'},
-  ];
+  topstreams: Topstream[];
+  dataSource = null;
+
+  user: User[];
+  userData = null;
+
+  constructor(private topstreamService: TopstreamService, private userService: UserService) {
+  }
+
+  ngOnInit(): void {
+    this.topstreamService.findAll().subscribe( data =>{
+      this.topstreams = data;
+      console.log(this.topstreams);
+      this.dataSource = this.topstreams;
+    })
+
+    this.userService.findAll().subscribe( data =>{
+      this.user = data;
+      console.log(this.user);
+      this.userData = this.user;
+    })
+  }
+
+  streamClicked(stream: String): void {
+    if(stream == '1'){
+      window.location.href = 'https://www.twitch.tv/' + this.dataSource.data[0].user_login;
+    }
+    else if(stream == '2'){
+      window.location.href = 'https://www.twitch.tv/' + this.dataSource.data[1].user_login;
+    }
+    else if(stream == '3'){
+      window.location.href = 'https://www.twitch.tv/' + this.dataSource.data[2].user_login;
+    }
+  }
+
+
 }

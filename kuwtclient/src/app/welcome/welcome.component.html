@@ -4,45 +4,54 @@
 </head>
 <body>
   <mat-toolbar color="primary">
-    <button mat-icon-button [matMenuTriggerFor]="menu" class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item>
-        <span>Menu1</span>
-      </button>
-      <button mat-menu-item>
-        <span>Menu2</span>
-      </button>
-      <button mat-menu-item>
-        <span>Menu3</span>
-      </button>
-    </mat-menu>
-    <span>{{title}}</span>
     <img  class="images" src="./assets/img/kuwt_logo.png" routerLink="/welcome"/>
+    <span>{{title}}</span>
+
     <span class="example-spacer"></span>
     <nav>
       <button mat-raised-button class="tool-button" routerLink="/streamers">Streamers</button>
 
       <button mat-raised-button class="tool-button" routerLink="/games">Games</button>
     </nav>
+
+    <div style="text-align: center; margin-left: 10px;">
+      <img src="{{userData.data[0].profile_image_url}}" class="profile"/>
+      <p style="font-size: 15px;">{{userData.data[0].display_name}}</p>
+    </div>
   </mat-toolbar>
 
-  <mat-grid-list cols="4" rowHeight="100px" class="news-list">
-    <mat-grid-tile
-      *ngFor="let tile of tiles"
-      [colspan]="tile.cols"
-      [rowspan]="tile.rows"
-      [style.background]="tile.color">
-      {{tile.text}}
-    </mat-grid-tile>
-  </mat-grid-list>
 
-  <mat-tab-group class="news-list">
-    <mat-tab label="First"> Content 1 </mat-tab>
-    <mat-tab label="Second"> Content 2 </mat-tab>
-    <mat-tab label="Third"> Content 3 </mat-tab>
-  </mat-tab-group>
+  <div class="topstreams">
+    <h2>Top Active Streams</h2>
+    <img src="{{dataSource.data[0].thumbnail_url}}" class="tile-img"/>
+    <h3>{{dataSource.data[0].title}}</h3>
+    <h3 style="display: inline-block">{{dataSource.data[0].user_name}}</h3>
+    <button style="margin-left: 10px;" mat-raised-button (click)="streamClicked('1')" color="primary">To Twitch</button>
+    <p></p>
+    <mat-icon aria-hidden="false" aria-label="Example eye icon" style="display: inline">perm_identity</mat-icon>
+    <h4 style="display: inline">{{dataSource.data[0].viewer_count}}</h4>
+
+    <mat-divider></mat-divider>
+
+    <img src="{{dataSource.data[1].thumbnail_url}}" class="tile-img"/>
+    <h3>{{dataSource.data[1].title}}</h3>
+    <h3 style="display: inline-block">{{dataSource.data[1].user_name}}</h3>
+    <button style="margin-left: 10px;" mat-raised-button (click)="streamClicked('2')" color="primary">To Twitch</button>
+    <p></p>
+    <mat-icon aria-hidden="false" aria-label="Example eye icon" style="display: inline">perm_identity</mat-icon>
+    <h4 style="display: inline">{{dataSource.data[1].viewer_count}}</h4>
+
+    <mat-divider></mat-divider>
+
+    <img src="{{dataSource.data[2].thumbnail_url}}" class="tile-img"/>
+    <h3>{{dataSource.data[2].title}}</h3>
+    <h3 style="display: inline-block">{{dataSource.data[2].user_name}}</h3>
+    <button style="margin-left: 10px;" mat-raised-button (click)="streamClicked('3')" color="primary">To Twitch</button>
+    <p></p>
+    <mat-icon aria-hidden="false" aria-label="Example eye icon" style="display: inline">perm_identity</mat-icon>
+    <h4 style="display: inline">{{dataSource.data[2].viewer_count}}</h4>
+  </div>
+
 </body>
 
 
