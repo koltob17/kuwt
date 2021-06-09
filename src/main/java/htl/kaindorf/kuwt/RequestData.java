@@ -118,7 +118,73 @@ public class RequestData {
             in.close();
             con.disconnect();
 
+            return content.toString().replace("{width}","96").replace("{height}","54");
+
+        } catch (Exception e) {
+            System.out.println(e);
+            return e.toString();
+        }
+    }
+
+
+    public static String getUserInformation(String token)
+    {
+        URL url = null;
+
+        try {
+            url = new URL("https://api.twitch.tv/helix/users");
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            con.setRequestMethod("GET");
+
+            con.setRequestProperty("client-id",client_id);
+            con.setRequestProperty("Authorization","Bearer "+token);
+
+            System.out.println(con.getResponseCode());
+
+            BufferedReader in = new BufferedReader(
+                    new InputStreamReader(con.getInputStream()));
+            String inputLine;
+            StringBuffer content = new StringBuffer();
+            while ((inputLine = in.readLine()) != null) {
+                content.append(inputLine);
+            }
+            in.close();
+            con.disconnect();
+
             return content.toString();
+
+        } catch (Exception e) {
+            System.out.println(e);
+            return e.toString();
+        }
+
+    }
+
+    public static String getFollowedStreams(String token,int id)
+    {
+        URL url = null;
+
+        try {
+            url = new URL("https://api.twitch.tv/helix/streams/followed?user_id="+id);
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            con.setRequestMethod("GET");
+
+            con.setRequestProperty("client-id",client_id);
+            con.setRequestProperty("Authorization","Bearer "+token);
+
+            System.out.println(con.getResponseCode());
+
+            BufferedReader in = new BufferedReader(
+                    new InputStreamReader(con.getInputStream()));
+            String inputLine;
+            StringBuffer content = new StringBuffer();
+            while ((inputLine = in.readLine()) != null) {
+                content.append(inputLine);
+            }
+            in.close();
+            con.disconnect();
+
+            return content.toString().replace("{width}","96").replace("{height}","54");
 
         } catch (Exception e) {
             System.out.println(e);

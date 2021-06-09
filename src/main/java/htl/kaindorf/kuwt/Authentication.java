@@ -18,7 +18,7 @@ public class Authentication {
     private static final String client_id = "cybiryufno8r3vb22ll4fy5hk5kmf7";
     private static final String client_secret = "vbwn7x6lpi33g9cywmfh4zb6kzk3u0";
     private static final String redirect_uri = "http://localhost:8080/hello";
-    private static final String scopes = "analytics:read:games user:read:email";
+    private static final String scopes = "user:read:follows analytics:read:games user:read:email";
 
 
     /**

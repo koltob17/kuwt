@@ -96,4 +96,22 @@ public class KuwtApplication {
         return streams;
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
+    @GetMapping("/getUserInformation")
+    public String getUserInformation()
+    {
+        String userInformation = RequestData.getUserInformation(token);
+
+        return userInformation;
+    }
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @GetMapping("/getFollowedStreams")
+    public String searchChannels(@RequestParam(name = "id") int id)
+    {
+        String followedStreams = RequestData.getFollowedStreams(token,id);
+
+        return followedStreams;
+    }
+
 }
