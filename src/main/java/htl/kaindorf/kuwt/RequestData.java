@@ -40,7 +40,7 @@ public class RequestData {
             in.close();
             con.disconnect();
 
-            return content.toString().replace("{width}","138").replace("{height}","190");
+            return content.toString().replace("{width}","1080").replace("{height}","1920");
 
         } catch (Exception e) {
             System.out.println(e);
