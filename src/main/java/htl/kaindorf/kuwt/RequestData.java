@@ -3,9 +3,7 @@ package htl.kaindorf.kuwt;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.http.HttpRequest;
 
 public class RequestData {
 
@@ -126,7 +124,11 @@ public class RequestData {
         }
     }
 
-
+    /**
+     * Liefert dir Informationen über den Angemeldeten User zurück.
+     * @param token
+     * @return String
+     */
     public static String getUserInformation(String token)
     {
         URL url = null;
@@ -160,6 +162,12 @@ public class RequestData {
 
     }
 
+    /**
+     * Liefert dir die Activen Streams denen du folgst.
+     * @param token
+     * @param id
+     * @return String
+     */
     public static String getFollowedStreams(String token,int id)
     {
         URL url = null;

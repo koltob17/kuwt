@@ -1,16 +1,10 @@
 package htl.kaindorf.kuwt;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
-import java.io.IOException;
 import java.net.*;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.util.Collection;
 import java.util.HashMap;
 
 public class Authentication {

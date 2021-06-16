@@ -4,7 +4,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
-
 import java.util.Map;
 
 @SpringBootApplication
@@ -58,7 +57,7 @@ public class KuwtApplication {
 
     /**
      * Bei Aufruf werden die Top 10 Games zurückgegeben.
-     * @return
+     * @return String
      */
     @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/topGames")
@@ -72,7 +71,7 @@ public class KuwtApplication {
     /**
      * Bei Aufruf und dem hinzugefügten Parameter werden die passenden Streamer zurückgegeben.
      * @param query
-     * @return
+     * @return String
      */
     @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/searchChannels")
@@ -85,7 +84,7 @@ public class KuwtApplication {
 
     /**
      * Bei Authentifizierten Aufruf der URL werden die Top aktiven Streams zurückgegeben.
-     * @return
+     * @return String
      */
     @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/getActiveStreams")
@@ -96,6 +95,10 @@ public class KuwtApplication {
         return streams;
     }
 
+    /**
+     * Bei Authentifizierten Aufruf der URL werden dir Informationen über den User zurückgegeben.
+     * @return String
+     */
     @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/getUserInformation")
     public String getUserInformation()
@@ -105,6 +108,11 @@ public class KuwtApplication {
         return userInformation;
     }
 
+    /**
+     * Bei Authentifizierten Aufruf der URL werden die aktiven Streams denen du folgst zurückgegeben.
+     * @param id
+     * @return String
+     */
     @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/getFollowedStreams")
     public String searchChannels(@RequestParam(name = "id") int id)
