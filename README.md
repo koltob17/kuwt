@@ -25,3 +25,7 @@ mvnw spring-boot:run in dem Verzeichnis /kuwt oder Projekt anlegen und einfach s
 
 Frontend:
 ng serve im Verzeichnis /src/app
+
+# Problems
+
+Mögliche Kompatibilitätsprobleme in Chrome und Firefox -> Edge verwenden
