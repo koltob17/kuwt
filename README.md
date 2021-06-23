@@ -12,3 +12,10 @@ Passwort: Twitch123
 
 # Starting the Application
 
+Das Backend muss zuerst gestartet werden!
+
+Backend:
+mvnw spring-boot:run in dem Verzeichnis /kuwt oder Projekt anlegen und einfach starten
+
+Frontend:
+ng serve im Verzeichnis /src/app
