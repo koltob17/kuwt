@@ -13,6 +13,10 @@
 
     <button mat-raised-button class="tool-button" routerLink="/games">Games</button>
   </nav>
+  <div style="text-align: center; margin-left: 10px;">
+    <img src="{{userData.data[0].profile_image_url}}" class="profile"/>
+    <p style="font-size: 15px;">{{userData.data[0].display_name}}</p>
+  </div>
 </mat-toolbar>
 
 <mat-form-field appearance="outline" class="streamer-in">
@@ -20,7 +24,7 @@
   <input matInput placeholder="Streamer" [(ngModel)]="search" (input)="onStreamerInput()">
 </mat-form-field>
 
-<div style="display: inline" *ngIf="dataSource != null">
+<div style="display: inline; height: 100%;" *ngIf="dataSource != null">
   <mat-card class="example-card" *ngFor="let result of dataSource.data">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"><img src={{result.thumbnail_url}} class="example-header-image"/></div>
@@ -41,6 +45,17 @@
     </mat-card-actions>
   </mat-card>
 </div>
+
+<footer class="container-footer" *ngIf="dataSource != null">
+  <div class="content-footer">
+    <p>KeepingUpWithTwitch is a free site that helps you to manage your Twitch experience.</p>
+    <p>We hope you enjoy our site and recommend it to your friends.</p>
+    <p>Feel free to contact us if u find any bugs.</p>
+  </div>
+  <div >
+    <span>@ Copyright 2021: <a href="https://github.com/koltob17/kuwt">KollarKrainer</a></span>
+  </div>
+</footer>
 
 </body>
 

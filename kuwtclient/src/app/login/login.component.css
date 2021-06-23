@@ -27,3 +27,21 @@ button:focus, button:active:focus, button.active:focus {
   margin-top: 50px;
   margin-left: 30%;
 }
+
+.container-footer {
+  width: 100%;
+  margin-top: 20px;
+  background-color: #673ab7;
+  text-align: center;
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.content-footer {
+  background-color: #a775ff;
+  height: 8%;
+  text-align: left;
+  padding: 10px;
+}

@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <head>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
   <mat-toolbar color="primary">
@@ -20,9 +30,8 @@
     </div>
   </mat-toolbar>
 
-
+  <h2 style="margin-top: 30px;">Top Active Streams</h2>
   <div class="topstreams">
-    <h2>Top Active Streams</h2>
     <img src="{{dataSource.data[0].thumbnail_url}}" class="tile-img"/>
     <h3>{{dataSource.data[0].title}}</h3>
     <h3 style="display: inline-block">{{dataSource.data[0].user_name}}</h3>
@@ -30,9 +39,8 @@
     <p></p>
     <mat-icon aria-hidden="false" aria-label="Example eye icon" style="display: inline">perm_identity</mat-icon>
     <h4 style="display: inline">{{dataSource.data[0].viewer_count}}</h4>
-
-    <mat-divider></mat-divider>
-
+  </div>
+  <div class="topstreams">
     <img src="{{dataSource.data[1].thumbnail_url}}" class="tile-img"/>
     <h3>{{dataSource.data[1].title}}</h3>
     <h3 style="display: inline-block">{{dataSource.data[1].user_name}}</h3>
@@ -40,9 +48,8 @@
     <p></p>
     <mat-icon aria-hidden="false" aria-label="Example eye icon" style="display: inline">perm_identity</mat-icon>
     <h4 style="display: inline">{{dataSource.data[1].viewer_count}}</h4>
-
-    <mat-divider></mat-divider>
-
+  </div>
+  <div class="topstreams">
     <img src="{{dataSource.data[2].thumbnail_url}}" class="tile-img"/>
     <h3>{{dataSource.data[2].title}}</h3>
     <h3 style="display: inline-block">{{dataSource.data[2].user_name}}</h3>
@@ -51,6 +58,64 @@
     <mat-icon aria-hidden="false" aria-label="Example eye icon" style="display: inline">perm_identity</mat-icon>
     <h4 style="display: inline">{{dataSource.data[2].viewer_count}}</h4>
   </div>
+  <div class="topstreams">
+    <img src="{{dataSource.data[3].thumbnail_url}}" class="tile-img"/>
+    <h3>{{dataSource.data[3].title}}</h3>
+    <h3 style="display: inline-block">{{dataSource.data[3].user_name}}</h3>
+    <button style="margin-left: 10px;" mat-raised-button (click)="streamClicked('4')" color="primary">To Twitch</button>
+    <p></p>
+    <mat-icon aria-hidden="false" aria-label="Example eye icon" style="display: inline">perm_identity</mat-icon>
+    <h4 style="display: inline">{{dataSource.data[3].viewer_count}}</h4>
+  </div>
+
+  <h2 style="margin-top: 30px;">Followed Streams</h2>
+  <div class="topstreams">
+    <img src="{{followSource.data[0].thumbnail_url}}" class="tile-img"/>
+    <h3>{{followSource.data[0].title}}</h3>
+    <h3 style="display: inline-block">{{followSource.data[0].user_name}}</h3>
+    <button style="margin-left: 10px;" mat-raised-button (click)="followedClicked('1')" color="primary">To Twitch</button>
+    <p></p>
+    <mat-icon aria-hidden="false" aria-label="Example eye icon" style="display: inline">perm_identity</mat-icon>
+    <h4 style="display: inline">{{followSource.data[0].viewer_count}}</h4>
+  </div>
+  <div class="topstreams">
+    <img src="{{followSource.data[1].thumbnail_url}}" class="tile-img"/>
+    <h3>{{followSource.data[1].title}}</h3>
+    <h3 style="display: inline-block">{{followSource.data[1].user_name}}</h3>
+    <button style="margin-left: 10px;" mat-raised-button (click)="followedClicked('2')" color="primary">To Twitch</button>
+    <p></p>
+    <mat-icon aria-hidden="false" aria-label="Example eye icon" style="display: inline">perm_identity</mat-icon>
+    <h4 style="display: inline">{{followSource.data[1].viewer_count}}</h4>
+  </div>
+  <div class="topstreams">
+    <img src="{{followSource.data[2].thumbnail_url}}" class="tile-img"/>
+    <h3>{{followSource.data[2].title}}</h3>
+    <h3 style="display: inline-block">{{followSource.data[2].user_name}}</h3>
+    <button style="margin-left: 10px;" mat-raised-button (click)="followedClicked('3')" color="primary">To Twitch</button>
+    <p></p>
+    <mat-icon aria-hidden="false" aria-label="Example eye icon" style="display: inline">perm_identity</mat-icon>
+    <h4 style="display: inline">{{followSource.data[2].viewer_count}}</h4>
+  </div>
+  <div class="topstreams">
+    <img src="{{followSource.data[3].thumbnail_url}}" class="tile-img"/>
+    <h3>{{followSource.data[3].title}}</h3>
+    <h3 style="display: inline-block">{{followSource.data[3].user_name}}</h3>
+    <button style="margin-left: 10px;" mat-raised-button (click)="followedClicked('4')" color="primary">To Twitch</button>
+    <p></p>
+    <mat-icon aria-hidden="false" aria-label="Example eye icon" style="display: inline">perm_identity</mat-icon>
+    <h4 style="display: inline">{{followSource.data[3].viewer_count}}</h4>
+  </div>
+
+  <footer class="container-footer">
+    <div class="content-footer">
+      <p>KeepingUpWithTwitch is a free site that helps you to manage your Twitch experience.</p>
+      <p>We hope you enjoy our site and recommend it to your friends.</p>
+      <p>Feel free to contact us if u find any bugs.</p>
+    </div>
+    <div >
+      <span>@ Copyright 2021: <a href="https://github.com/koltob17/kuwt">KollarKrainer</a></span>
+    </div>
+  </footer>
 
 </body>
 

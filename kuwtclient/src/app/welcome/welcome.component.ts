@@ -20,6 +20,9 @@ export class WelcomeComponent implements OnInit{
   topstreams: Topstream[];
   dataSource = null;
 
+  followed: Topstream[];
+  followSource = null;
+
   user: User[];
   userData = null;
 
@@ -38,6 +41,16 @@ export class WelcomeComponent implements OnInit{
       console.log(this.user);
       this.userData = this.user;
     })
+
+    setTimeout(() => {
+      console.log(this.userData.data[0].id);
+      this.topstreamService.followed(this.userData.data[0].id).subscribe( data =>{
+        this.followed = data;
+        console.log(this.followed);
+        this.followSource = this.followed;
+      })
+    }, 1500)
+
   }
 
   streamClicked(stream: String): void {
@@ -50,7 +63,23 @@ export class WelcomeComponent implements OnInit{
     else if(stream == '3'){
       window.location.href = 'https://www.twitch.tv/' + this.dataSource.data[2].user_login;
     }
+    else if(stream == '4'){
+      window.location.href = 'https://www.twitch.tv/' + this.dataSource.data[3].user_login;
+    }
   }
 
-
+  followedClicked(stream: String): void {
+    if(stream == '1'){
+      window.location.href = 'https://www.twitch.tv/' + this.followSource.data[0].user_login;
+    }
+    else if(stream == '2'){
+      window.location.href = 'https://www.twitch.tv/' + this.followSource.data[1].user_login;
+    }
+    else if(stream == '3'){
+      window.location.href = 'https://www.twitch.tv/' + this.followSource.data[2].user_login;
+    }
+    else if(stream == '4'){
+      window.location.href = 'https://www.twitch.tv/' + this.followSource.data[3].user_login;
+    }
+  }
 }

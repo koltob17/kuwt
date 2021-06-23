@@ -26,12 +26,13 @@ button:focus, button:active:focus, button.active:focus {
 }
 
 .topstreams{
-  width: 20%;
-  margin-top: 30px;
-  margin-left: 70%;
+  width: 24%;
+  margin: 5px;
   display: inline-block;
-  background-color: lightyellow;
+  background-color: #f8ebff;
   padding: 10px;
+  border: 2px solid black;
+  border-collapse: collapse;
 }
 
 .tile-img{
@@ -45,4 +46,22 @@ button:focus, button:active:focus, button.active:focus {
   height: 30px;
   margin-top: 15px;
   border-radius: 20px;
+}
+
+.container-footer {
+  width: 100%;
+  margin-top: 20px;
+  background-color: #673ab7;
+  text-align: center;
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.content-footer {
+  background-color: #a775ff;
+  height: 8%;
+  text-align: left;
+  padding: 10px;
 }

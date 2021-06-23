@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 import {Game} from "../beans/game";
 import {GamesServiceService} from "../services/games-service.service";
+import {User} from "../beans/user";
+import {UserService} from "../services/user.service";
 
 @Component({
   selector: 'app-games',
@@ -15,7 +17,10 @@ export class GamesComponent implements OnInit  {
 
   games: Game[];
 
-  constructor(private gameService: GamesServiceService) {
+  user: User[];
+  userData = null;
+
+  constructor(private gameService: GamesServiceService, private userService: UserService) {
   }
 
   ngOnInit() {
@@ -23,6 +28,12 @@ export class GamesComponent implements OnInit  {
       this.games = data;
       console.log(this.games);
       this.dataSource = this.games;
+    })
+
+    this.userService.findAll().subscribe( data =>{
+      this.user = data;
+      console.log(this.user);
+      this.userData = this.user;
     })
 
   }
