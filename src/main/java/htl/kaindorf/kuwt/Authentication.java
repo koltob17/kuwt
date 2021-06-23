@@ -7,6 +7,10 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.HashMap;
 
+/**
+ * @author Manuel Krainer
+ */
+
 public class Authentication {
 
     private static final String client_id = "cybiryufno8r3vb22ll4fy5hk5kmf7";

@@ -6,6 +6,10 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 import java.util.Map;
 
+/**
+ * @author Manuel Krainer
+ */
+
 @SpringBootApplication
 @RestController
 public class KuwtApplication {

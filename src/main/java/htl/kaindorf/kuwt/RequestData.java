@@ -5,6 +5,10 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+/**
+ * @author Manuel Krainer
+ */
+
 public class RequestData {
 
     private static final String client_id = "cybiryufno8r3vb22ll4fy5hk5kmf7";
