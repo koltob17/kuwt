@@ -1,3 +1,7 @@
+/**
+ * Author: Tobias Kollar
+ * Projekt: KeepingUpWithTwitch
+ */
 import { Component } from '@angular/core';
 
 export interface Tile {

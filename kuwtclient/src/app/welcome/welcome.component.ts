@@ -1,3 +1,7 @@
+/**
+ * Author: Tobias Kollar
+ * Projekt: KeepingUpWithTwitch
+ */
 import {Component, OnInit} from '@angular/core';
 import { TopstreamService } from "../services/topstream.service";
 import {Topstream} from "../beans/topstream";

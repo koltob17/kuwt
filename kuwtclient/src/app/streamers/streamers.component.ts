@@ -1,3 +1,7 @@
+/**
+ * Author: Tobias Kollar
+ * Projekt: KeepingUpWithTwitch
+ */
 import { Component, OnInit } from '@angular/core';
 import { StreamerserviceService } from "../services/streamerservice.service";
 import {Search} from "../beans/search";

@@ -1,5 +1,8 @@
+/**
+ * Author: Tobias Kollar
+ * Projekt: KeepingUpWithTwitch
+ */
 import {Component, OnInit} from '@angular/core';
-import {MatTableDataSource} from '@angular/material/table';
 import {Game} from "../beans/game";
 import {GamesServiceService} from "../services/games-service.service";
 import {User} from "../beans/user";

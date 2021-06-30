@@ -1,3 +1,7 @@
+/**
+ * Author: Tobias Kollar
+ * Projekt: KeepingUpWithTwitch
+ */
 export class Topstream {
   id: string;
   user_id: string;

@@ -1,3 +1,7 @@
+/**
+ * Author: Tobias Kollar
+ * Projekt: KeepingUpWithTwitch
+ */
 export class Search {
   broadcaster_language: string;
   broadcaster_login: string;
