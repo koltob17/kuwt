@@ -7,7 +7,7 @@ import org.springframework.web.servlet.view.RedirectView;
 import java.util.Map;
 
 /**
- * @author Manuel Krainer
+ * @author Manuel Krainer, KeepingUpWithTwitch
  */
 
 @SpringBootApplication

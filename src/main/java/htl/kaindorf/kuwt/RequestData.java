@@ -6,7 +6,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 /**
- * @author Manuel Krainer
+ * @author Manuel Krainer, KeepingUpWithTwitch
  */
 
 public class RequestData {

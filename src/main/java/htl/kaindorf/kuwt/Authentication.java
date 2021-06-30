@@ -8,7 +8,7 @@ import java.net.http.HttpResponse;
 import java.util.HashMap;
 
 /**
- * @author Manuel Krainer
+ * @author Manuel Krainer, KeepingUpWithTwitch
  */
 
 public class Authentication {
