@@ -21,10 +21,10 @@ Passwort: Twitch123
 Das Backend muss zuerst gestartet werden!
 
 Backend:
-mvnw spring-boot:run in dem Verzeichnis /kuwt oder Projekt anlegen und einfach starten
+mvnw spring-boot:run in dem Verzeichnis /kuwt oder Projekt anlegen und einfach starten -> läuft auf Port 8080
 
 Frontend:
-ng serve im Verzeichnis /src/app
+ng serve im Verzeichnis /src/app -> läuft auf Port 4200
 
 # Problems
 
